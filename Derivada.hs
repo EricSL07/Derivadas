@@ -144,7 +144,9 @@ simplificar (Potencia c1 n) =
 
 main :: IO ()
 main = do
-    let prefixa = "(+ (* 3 (^ x 2)) (* 2 x))"
+    putStrLn "Digite a expressão"
+    entrada  <- getLine
+    let prefixa = entrada
     let (expr, _) = parse (tokenize prefixa)
     let derivada = derivar expr "x" 
     let derivada_simplificada = simplificar derivada
